@@ -1,67 +1,89 @@
-name: "TestJN"
-description: "If you have a request for a feature you believe the VA Platform should implement, complete the information below."
-title: "[Feature Request [Feature-Name]:"
-labels:
-  - "platform-feature-request"
-assignees:
-  - jchasia-adhoc  
+name: Environment Access Request
+description: To request access to dev tools
+title: Access for [individual]
+labels: ['external-request', 'operations', 'ops-access-request']
 body:
-
-- type: markdown
+  - type: markdown
     attributes:
       value: |
-        If you have a request for a feature you believe the VA Platform should implement, complete the information below. The more information Platform has, the faster we can process the request.
-  - type: textarea
-    id: topic
+        1. Change the **Title** to include your name
+        2. Add the label used by your team (eg: `BAH-526`)
+        3. Do not remove `operations` label or the `ops-access-request` label; this will notify the VSP Operations team of your request
+        4. Add additional info as a comment after GitHub issue is created if you select 'Other' for any of the form inputs.
+        5. When the issue is closed you will be notified and can continue with on-boarding setup
+  - type: dropdown
+    id: cor-name
     attributes:
-      label: Describe the problem
-      description: "Describe the problem, and how solving this problem will make things better for VFS Teams, OCTO-DE, VA, or Content Editors"
-      placeholder: 
-    validations:
-      required: true
-  - type: textarea
-    id: benefit
-    attributes:
-      label: Who will benefit 
-      description: "How widespread is the problem, i.e. who do you believe would benefit from the Platform solving this problem?"
-      placeholder: 
-    validations:
-      required: true
-  - type: textarea
-    id: Describe 
-    attributes:
-      label: Describe your idea
-      description: "Describe your Platform feature or service idea, in other words describe how you think the Platform should solve this"
-      placeholder: 
-    validations:
-      required: true
-  - type: textarea
-    id: evidece
-    attributes:
-      label: Provide evidence
-      description: "Provide the evidence that you have on the need for this enhancement"
-      placeholder: 
-    validations:
-      required: true
-  - type: checkboxes
-    id: Mission
-    attributes:
-      label: Platform Mission
-      description: Indicate which of the parts of our Platform mission the enhancement would drive (select all that apply)
+      label: COR Name
+      description: Your Contracting Officer's Representative (COR) name.
       options:
-        - label: Keeps these products and services available, stable, and secure.
-        - label: Ensures they are consistent and meet high standards of quality in Veteran-centered user experience and technical approach.
-        - label: Provides shared tools, software, support, and technical infrastructure to accelerate their development.
-        - label: Other
-  - type: textarea
-    id: other-topics
+        - Cecila Lee
+        - Courtney Bethea 
+        - Crystal Moultrie
+        - Doris Lin
+        - Mary O’Toole
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: vendor
     attributes:
-      label: "Other:"
-      description: "If 'Other' is selected, please explain here:"
+      label: Vendor Onboarding Representative Name
+      description: This is the person from the contracting company responsible for your onboarding process.
+      options:
+        - Oddball - Amber Malcolm
+        - Insignia - Kimberly S. Cole
+        - Agile Six - Anthony M. Arashiro
+        - GovernmentCIO - Kimberly O. West
+        - Magnum Opus - Paula G. Mendoza
+        - Liberty IT -  Michael G. Lovejoy
+        - Accenture Federal Services - Alexa Elliot
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: requestor-name
+    attributes:
+      label: Your Name
+      description: Please provide your name.
+      placeholder: ex. Jane Doe
+    validations:
+      required: true
+  - type: input
+    id: email
+    attributes:
+      label: Your Email
+      description: Please provide your name.
+      placeholder: ex. jane.doe@gmail.com
+    validations:
+      required: true
+  - type: input
+    id: team-name
+    attributes:
+      label: Name of Your Team
+      description: Please provide the name of your team, your role on that team, and the name of the company you work for.
+      placeholder: this adds context
     validations:
       required: false
-
-
-
-
-  
+  - type: dropdown
+    id: request-services
+    attributes:
+      label: Service(s) You Want Access To
+      multiple: true
+      options:
+        - SOCKS
+        - AWS
+    validations:
+      required: true
+  - type: textarea
+    id: ssh-key
+    attributes:
+      label: Public SSH Key
+      description: Requred for SOCKS. If you don't have a SSH Key or know how to find it [click here](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/platform/engineering/internal-tools.md#create-ssh-public-key) for instructions
+      placeholder: ssh-rsa  AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+AAAByyyz/1234+ username@mail.com
+  - type: textarea
+    id: aws-access
+    attributes:
+      label: Desired AWS Services
+      description: What AWS services do you need access to and why? 
+      placeholder: I need access to S3 to read uploaded files from the /tools-team/uploads bucket.
