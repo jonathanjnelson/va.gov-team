@@ -1,9 +1,9 @@
-name: Environment Access Request
-description: To request access to dev tools
-title: Access for [individual]
-labels: ['external-request', 'operations', 'ops-access-request']
-body:
-  - type: markdown
+  name: Environment Access Request
+  description: To request access to dev tools
+  title: Access for [individual]
+  labels: ['external-request', 'operations', 'ops-access-request']
+  body:
+    - type: markdown
     attributes:
       value: |
         1. Change the **Title** to include your name
